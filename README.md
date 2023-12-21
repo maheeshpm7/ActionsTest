@@ -20,10 +20,4 @@ xewjvdqjhkbed
 Maheesh pm 
 
 
-jbckawbekj aa
-qkcc kqen c
-2eq2j q
 
-
-e2b2ekn2
-2knq2knd
