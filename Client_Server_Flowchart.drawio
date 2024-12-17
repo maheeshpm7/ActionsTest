@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net">
+  <diagram name="Client-Server Deployment Architecture">
+    <mxGraphModel dx="1000" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- GitLab CI/CD -->
+        <mxCell id="gitlab_cicd" value="GitLab CI/CD Pipeline" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f3f1e7;" vertex="1" parent="1">
+          <mxGeometry x="60" y="60" width="180" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- AWS EC2 Instance -->
+        <mxCell id="ec2" value="AWS EC2 Instance
+(Deployed Services)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d9e8fb;" vertex="1" parent="1">
+          <mxGeometry x="300" y="60" width="250" height="200" as="geometry" />
+        </mxCell>
+
+        <!-- React Frontend -->
+        <mxCell id="react" value="React Frontend" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;" vertex="1" parent="ec2">
+          <mxGeometry x="20" y="40" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Python Flask Backend -->
+        <mxCell id="flask" value="Python Flask Backend" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;" vertex="1" parent="ec2">
+          <mxGeometry x="140" y="40" width="120" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Nginx Proxy -->
+        <mxCell id="nginx" value="Nginx Proxy" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe6cc;" vertex="1" parent="ec2">
+          <mxGeometry x="80" y="140" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- AWS RDS Database -->
+        <mxCell id="rds" value="AWS RDS Database" style="shape=database;whiteSpace=wrap;html=1;fillColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="600" y="120" width="150" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Schemas and Tables -->
+        <mxCell id="schemas" value="Schemas & Tables" style="text;html=1;" vertex="1" parent="rds">
+          <mxGeometry x="30" y="40" width="100" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Frontend Users -->
+        <mxCell id="users" value="Frontend Users" style="ellipse;whiteSpace=wrap;html=1;fillColor=#cce5ff;" vertex="1" parent="1">
+          <mxGeometry x="60" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Connections -->
+        <mxCell id="ci_to_ec2" edge="1" source="gitlab_cicd" target="ec2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ec2_to_nginx" edge="1" source="react" target="nginx" style="edgeStyle=orthogonalEdgeStyle;rounded=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="backend_to_rds" edge="1" source="flask" target="rds" style="edgeStyle=orthogonalEdgeStyle;rounded=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nginx_to_users" edge="1" source="nginx" target="users" style="edgeStyle=orthogonalEdgeStyle;rounded=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
